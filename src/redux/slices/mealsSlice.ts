@@ -32,23 +32,18 @@ const mealsSlice = createSlice({
 	reducers: {
 		setMeal(state, action: PayloadAction<AllMealProperties[]>) {
 			state.items = action.payload;
-			console.log(action);
 		},
 	},
 	extraReducers: builder => {
 		builder.addCase(fetchMeals.pending, state => {
 			state.loading = true;
-			console.log(state);
-			console.log("pending");
 		});
 		builder.addCase(fetchMeals.fulfilled, (state, action) => {
 			state.loading = false;
 			state.items = action.payload.meals || [];
-			console.log("fulfilled");
 		});
 		builder.addCase(fetchMeals.rejected, state => {
 			state.loading = false;
-			console.log("rejected");
 		});
 	},
 });

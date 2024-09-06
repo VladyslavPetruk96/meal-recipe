@@ -1,0 +1,23 @@
+.root {
+	width: 80%;
+	margin: 0 auto;
+}
+h2 {
+	margin-bottom: 20px;
+	text-align: center;
+}
+.list {
+	display: flex;
+	flex-direction: column;
+}
+.groupIng {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+.groupIng h3 {
+	text-align: left;
+}
+.root button {
+	background-color: rgb(197, 235, 235);
+	color: black;
+}

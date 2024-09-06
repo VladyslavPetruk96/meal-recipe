@@ -24,7 +24,6 @@ export const MealCard: React.FC<MealCardProps> = ({ meal }) => {
 			<p>
 				Area: <b>{meal.strArea}</b>
 			</p>
-			<button>Add to Cart</button>
 		</li>
 	);
 };

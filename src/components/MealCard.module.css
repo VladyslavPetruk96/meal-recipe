@@ -1,0 +1,22 @@
+.root {
+	display: flex;
+	flex-direction: column;
+	border: 1px solid gray;
+	gap: 10px;
+	padding: 10px;
+}
+img {
+	width: 250px;
+	height: 250px;
+}
+h3 {
+	text-align: center;
+	color: rgb(73, 174, 141);
+}
+p b {
+	color: aqua;
+}
+li button {
+	background-color: rgb(197, 235, 235);
+	color: black;
+}

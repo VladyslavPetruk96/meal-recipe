@@ -1,20 +1,17 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { MealProperties } from "../helpers/interfaces";
+import { fetchMeals } from "../redux/slices/mealsSlice";
+import { AppDispatcher, RootState } from "../redux/store";
 import styles from "./Home.module.css";
 import { MealCard } from "./MealCard";
 
 export const Home = () => {
-	const [meals, setMeals] = useState<MealProperties[]>([]);
+	const dispatch = useDispatch<AppDispatcher>();
+	const meals = useSelector((state: RootState) => state.meals.items);
 
 	useEffect(() => {
-		const fetchMeals = async () => {
-			const res = await fetch(
-				"https://www.themealdb.com/api/json/v1/1/search.php?s="
-			);
-			const data = await res.json();
-			setMeals(data.meals);
-		};
-		fetchMeals();
+		dispatch(fetchMeals());
 	}, []);
 
 	return (
